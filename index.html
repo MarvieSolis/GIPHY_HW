@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
 
 <head>
     <title>Superhero GIPHY Search</title>
     <!--Links to Bootstrap v4.1.0 and CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -25,27 +25,27 @@
             <div id="gifDisplay" class="col-md-9">
             </div>
             <!--Search bar-->
-            <form>
-              <div class="form-group">
-                <label for="userSearch">Enter a superhero name!</label>
-                <input type="superhero" class="form-control" id="userEntry" aria-describedby="superheroSearch" placeholder="Ex: Spiderman">
-              </div>
-              <button type="submit" class="btn btn-danger">Submit</button>
-            </form>
+            <div id="form-display" class="col-md-3">
+                <form>
+                <div class="form-group">
+                    <label for="userSearch">Enter a superhero name!</label>
+                    <input type="text" class="form-control" id="userEntry" placeholder="Ex: Spiderman">
+                </div>
+                <button id="submitButton" type="submit" class="btn btn-danger">Submit</button>
+                </form>
+                <div class="container" id="limit-buttons">
+                    <!--Limit Changer-->
+                    <div class="row"><button id="limit10" type="submit" class="btn btn-primary">Show me 10!</button>
+                    </div>
+                    <div class="row"><button id="limit15" type="submit" class="btn btn-primary">Show me 15!</button>
+                    </div>
+                    <div class="row"><button id="limit20" type="submit" class="btn btn-primary">Show me 20!</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!--jQuery Bootstrap and javascript links-->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script type="text/javascipt" src="./assets/javascript/script.js"></script>
+    <script src="./assets/javascript/script.js"></script>
 
-
-
-    <div class="mx-auto">
-        <h3>&copy; Copyright 2018. Created by Marvie Solis</h3>
-    </div>
 </body>
-
-
-</html>

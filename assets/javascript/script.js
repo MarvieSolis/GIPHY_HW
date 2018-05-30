@@ -1,5 +1,154 @@
 // Variables
 var topics = ["Iron man", "Captain America", "Spiderman", "Thor", "Black Panther", "Batman", "Superman", "Wonderwoman", "Aquaman", "Green Lantern"];
+var currentTopic = "";
+var limit = 10;
 
 // Functions
+
+// Generate initial buttons on page
+function generateButtons() {
+    $("#gifButtons").empty();
+    for (var i=0; i < topics.length; i++) {
+        var gifButton = $("<button>");
+        gifButton.attr("data-name", topics[i]);
+        gifButton.text(topics[i]);
+        gifButton.addClass("btn btn-secondary");
+        gifButton.addClass("topic");
+        $("#gifButtons").append(gifButton);
+    }
+}
+
+// Create new button from user entry
+function newButton() {
+    $("#submitButton").on("click", function() {
+        var topic = $("#userEntry").val().trim();
+        if (topic === "") {
+            return false;
+        }
+        topics.push(topic);
+
+        generateButtons();
+
+        return false;
+    });
+}
+
+// Change amount of GIFs displayed
+function changeLimit() {
+    $("#limit10").on("click", function() {
+        limit = 10;
+        generateGifs2();
+        return false;
+    });
+
+    $("#limit15").on("click", function() {
+        limit = 15;
+        generateGifs2();
+        return false;
+    });
+
+    $("#limit20").on("click", function() {
+        limit = 20;
+        generateGifs2();
+        return false;
+    });
+}
+
+
+// Generate GIFS
+function generateGifs() {
+    var topic = $(this).attr("data-name");
+    currentTopic = topic;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=QLUSm2ZMGrc72Cc5OEDoaca1NuLZCb7v" + "&limit=" + limit;
+    console.log(queryURL);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    .done(function(response) {
+        console.log(response);
+        $("#gifDisplay").empty();
+        var results = response.data;
+        if (results === "") {
+            alert("Sorry, no GIFs can be retrieved regarding this topic ):");
+        }
+        for (var i=0; i<results.length; i++) {
+
+            var gif = $("<div style='float:left'</div>");
+
+            var gifRating = $("<p>").text("Rating: " + results[i].rating);
+            gif.append(gifRating);
+
+            var gifImage = $("<img>");
+            $(gifImage).attr("src", results[i].images.fixed_height_small_still.url);
+            $(gifImage).attr("data-still", results[i].images.fixed_height_small_still.url);
+            $(gifImage).attr("data-animate", results[i].images.fixed_height_small.url);
+            $(gifImage).attr("data-state", "data-still");
+            $(gifImage).addClass("selection");
+            $(gif).append(gifImage);
+
+            $("#gifDisplay").prepend(gif);
+        }
+    })
+}
+
+function generateGifs2() {
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + currentTopic + "&api_key=QLUSm2ZMGrc72Cc5OEDoaca1NuLZCb7v" + "&limit=" + limit;
+    console.log(queryURL);
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    .done(function(response) {
+        console.log(response);
+        $("#gifDisplay").empty();
+        var results = response.data;
+        if (results === "") {
+            alert("Sorry, no GIFs can be retrieved regarding this topic ):");
+        }
+        for (var i=0; i<results.length; i++) {
+
+            var gif = $("<div style='float:left'</div>");
+
+            var gifRating = $("<p>").text("Rating: " + results[i].rating);
+            gif.append(gifRating);
+
+            var gifImage = $("<img>");
+            $(gifImage).attr("src", results[i].images.fixed_height_small_still.url);
+            $(gifImage).attr("data-still", results[i].images.fixed_height_small_still.url);
+            $(gifImage).attr("data-animate", results[i].images.fixed_height_small.url);
+            $(gifImage).attr("data-state", "data-still");
+            $(gifImage).addClass("selection");
+            $(gif).append(gifImage);
+
+            $("#gifDisplay").prepend(gif);
+        }
+    })
+}
+
+function changeState() {
+    var currentState = $(this).attr("data-state");
+    if (currentState = "data-still") {
+        $(this).attr("src", $(this).data("animate"));
+        $(this).attr("data-state", "data-animate");
+    }
+    else if (currentState = "data-animate") {
+        $(this).attr("src", $(this).data("still"));
+        $(this).attr("data-state", "data-still");
+    }
+}
+
+
+
+// Function Call
+generateButtons();
+generateGifs();
+newButton();
+changeLimit();
+
+$(document).on("click", ".topic", generateGifs);
+
+$(document).on("click", ".selection", changeState);
+
+
 
