@@ -12,7 +12,7 @@ function generateButtons() {
         var gifButton = $("<button>");
         gifButton.attr("data-name", topics[i]);
         gifButton.text(topics[i]);
-        gifButton.addClass("btn btn-secondary");
+        gifButton.addClass("btn btn-dark");
         gifButton.addClass("topic");
         $("#gifButtons").append(gifButton);
     }
@@ -22,14 +22,19 @@ function generateButtons() {
 function newButton() {
     $("#submitButton").on("click", function() {
         var topic = $("#userEntry").val().trim();
+        var check = topics.indexOf(topic);
         if (topic === "") {
             return false;
         }
-        topics.push(topic);
-
-        generateButtons();
-
-        return false;
+        else if (check === -1) {
+            topics.push(topic);
+            generateButtons();
+            $("#userEntry").val("");
+            return false;
+        }
+        else if (check !== -1) {
+            return false;
+        }
     });
 }
 
@@ -75,9 +80,7 @@ function generateGifs() {
         for (var i=0; i<results.length; i++) {
 
             var gif = $("<div style='float:left'</div>");
-
-            var gifRating = $("<p>").text("Rating: " + results[i].rating);
-            gif.append(gifRating);
+            $(gif).addClass("gifBox");
 
             var gifImage = $("<img>");
             $(gifImage).attr("src", results[i].images.fixed_height_small_still.url);
@@ -86,6 +89,9 @@ function generateGifs() {
             $(gifImage).attr("data-state", "data-still");
             $(gifImage).addClass("selection");
             $(gif).append(gifImage);
+
+            var gifRating = $("<p>").text("Rating: " + results[i].rating);
+            gif.append(gifRating);
 
             $("#gifDisplay").prepend(gif);
         }
@@ -109,9 +115,7 @@ function generateGifs2() {
         for (var i=0; i<results.length; i++) {
 
             var gif = $("<div style='float:left'</div>");
-
-            var gifRating = $("<p>").text("Rating: " + results[i].rating);
-            gif.append(gifRating);
+            $(gif).addClass("gifBox");
 
             var gifImage = $("<img>");
             $(gifImage).attr("src", results[i].images.fixed_height_small_still.url);
@@ -120,6 +124,9 @@ function generateGifs2() {
             $(gifImage).attr("data-state", "data-still");
             $(gifImage).addClass("selection");
             $(gif).append(gifImage);
+
+            var gifRating = $("<p>").text("Rating: " + results[i].rating);
+            gif.append(gifRating);
 
             $("#gifDisplay").prepend(gif);
         }

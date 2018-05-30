@@ -1,0 +1,70 @@
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+    padding: 50px;
+    font-size: 45px;
+}
+
+h2 {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+#banner-header {
+    background: url("../images/headerback.jpg");
+    border: 10px;
+    border-bottom: 5px;
+    border-color: black;
+    border-style: solid;
+}
+
+#gifButtons {
+    background: url("../images/buttonback.png");
+    border: 10px;
+    border-top: 5px;
+    border-bottom: 5px;
+    border-color: black;
+    border-style: solid;
+    padding: 15px;
+}
+
+#gifDisplay {
+    background: url("../images/gifback.jpg");
+    border: 10px;
+    border-right: 5px;
+    border-top: 5px;
+    border-color: black;
+    border-style: solid;
+    padding: 15px;
+}
+
+#form-display {
+    background: url("../images/searchback.jpg");
+    border: 10px;
+    border-top: 5px;
+    border-left: 5px;
+    border-color: black;
+    border-style: solid;
+    padding: 15px;
+}
+
+p {
+    font-family: 'Arvo', serif;
+    text-align: center;
+}
+
+.topic {
+    margin: 5px;
+}
+
+.selection {
+    margin: 10px;
+}
+
+
+
+#limit-buttons {
+    margin-top: 70px;
+}
+
+#limit10, #limit15, #limit20 {
+    margin: 20px;
+}

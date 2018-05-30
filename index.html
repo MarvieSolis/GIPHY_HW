@@ -5,21 +5,26 @@
     <!--Links to Bootstrap v4.1.0 and CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Bowlby+One+SC" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
 
     <!--Header Title-->
-    <div id="banner-header" class="container">
-
+    <div id="banner-header" class="container-fluid">
+        <div class="row">
+            <div class="mx-auto">
+                <h1>GIPHY SUPER HERO SEARCH ENGINE</h1>
+            </div>
+        </div>
     </div>
 
     <!--Buttons-->
     <div id="gifButtons" class="container-fluid"></div>
 
     <!--Gifs section-->
-    <div class="container">
+    <div id="main" class="container-fluid">
         <div class="row">
             <!--GIF display-->
             <div id="gifDisplay" class="col-md-9">
@@ -28,18 +33,19 @@
             <div id="form-display" class="col-md-3">
                 <form>
                 <div class="form-group">
-                    <label for="userSearch">Enter a superhero name!</label>
+                    <label for="userSearch"><h2>Enter a superhero name!</h2></label>
                     <input type="text" class="form-control" id="userEntry" placeholder="Ex: Spiderman">
                 </div>
                 <button id="submitButton" type="submit" class="btn btn-danger">Submit</button>
                 </form>
                 <div class="container" id="limit-buttons">
                     <!--Limit Changer-->
-                    <div class="row"><button id="limit10" type="submit" class="btn btn-primary">Show me 10!</button>
+                    <h2>SWITCH IT UP!</h2>
+                    <div class="row"><button id="limit10" type="submit" class="btn btn-light">Show me 10 GIFs!</button>
                     </div>
-                    <div class="row"><button id="limit15" type="submit" class="btn btn-primary">Show me 15!</button>
+                    <div class="row"><button id="limit15" type="submit" class="btn btn-light">Show me 15 GIFs!</button>
                     </div>
-                    <div class="row"><button id="limit20" type="submit" class="btn btn-primary">Show me 20!</button>
+                    <div class="row"><button id="limit20" type="submit" class="btn btn-light">Show me 20 GIFs!</button>
                     </div>
                 </div>
             </div>
