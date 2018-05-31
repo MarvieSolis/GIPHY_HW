@@ -54,7 +54,7 @@ function displayMovies() {
             if (results === "") {
                 alert("Sorry, no movies can be retrieved regarding this topic ):");
             }
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < 5; i++) {
 
                 var movie = $("<div style='float:left'</div>");
                 $(movie).addClass("movieBox");
@@ -171,6 +171,8 @@ function generateGifs2() {
         })
 }
 
+
+// Change GIF to animate or still
 function changeState() {
     var currentState = $(this).attr("data-state");
     if (currentState === "data-still") {
@@ -185,12 +187,14 @@ function changeState() {
 
 
 
-// Function Call
+// Function Calls
 generateButtons();
 generateGifs();
 newButton();
 changeLimit();
 
+
+// On Click call functions
 $(document).on("click", ".topic", generateGifs);
 
 $(document).on("click", ".selection", changeState);
