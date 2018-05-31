@@ -109,6 +109,7 @@ function generateGifs() {
         .done(function (response) {
             console.log(response);
             $("#gifDisplay").empty();
+            $("#movies").empty();
             var results = response.data;
             if (results === "") {
                 alert("Sorry, no GIFs can be retrieved regarding this topic ):");
@@ -144,6 +145,7 @@ function generateGifs2() {
         .done(function (response) {
             console.log(response);
             $("#gifDisplay").empty();
+            $("#movies").empty();
             var results = response.data;
             if (results === "") {
                 alert("Sorry, no GIFs can be retrieved regarding this topic ):");
@@ -171,11 +173,11 @@ function generateGifs2() {
 
 function changeState() {
     var currentState = $(this).attr("data-state");
-    if (currentState = "data-still") {
+    if (currentState === "data-still") {
         $(this).attr("src", $(this).data("animate"));
         $(this).attr("data-state", "data-animate");
     }
-    else if (currentState = "data-animate") {
+    else if (currentState === "data-animate") {
         $(this).attr("src", $(this).data("still"));
         $(this).attr("data-state", "data-still");
     }
