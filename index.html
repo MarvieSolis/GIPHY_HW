@@ -3,50 +3,75 @@
 <head>
     <title>Superhero GIPHY Search</title>
     <!--Links to Bootstrap v4.1.0 and CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Arvo|Bowlby+One+SC" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
 
     <!--Header Title-->
-    <div id="banner-header" class="container-fluid">
-        <div class="row">
-            <div class="mx-auto">
-                <h1>GIPHY SUPER HERO SEARCH ENGINE</h1>
+    <div class="row">
+        <div id="banner-header" class="container-fluid">
+            <div class="row">
+                <div class="mx-auto">
+                    <h1>GIPHY SUPER HERO SEARCH ENGINE</h1>
+                </div>
             </div>
         </div>
     </div>
 
     <!--Buttons-->
-    <div id="gifButtons" class="container-fluid"></div>
+    <div class="row">
+        <div id="gifButtons" class="container-fluid"></div>
+    </div>
 
-    <!--Gifs section-->
-    <div id="main" class="container-fluid">
-        <div class="row">
-            <!--GIF display-->
-            <div id="gifDisplay" class="col-md-9">
-            </div>
-            <!--Search bar-->
-            <div id="form-display" class="col-md-3">
-                <form>
-                <div class="form-group">
-                    <label for="userSearch"><h2>Enter a superhero name!</h2></label>
-                    <input type="text" class="form-control" id="userEntry">
+    <!--Movies-->
+    <div class="row">
+    <div id="movies" class="container-fluid"></div>
+    </div>
+
+    <div class="row">
+        <!--Gifs section-->
+        <div id="main" class="container-fluid">
+            <div class="row">
+                <!--GIF display-->
+                <div id="gifDisplay" class="col-md-9">
                 </div>
-                <button id="submitButton" type="submit" class="btn btn-danger"><i class="fas fa-external-link-alt"></i> Submit</button>
-                </form>
-                <div class="container" id="limit-buttons">
-                    <!--Limit Changer-->
-                    <h2>SWITCH IT UP!</h2>
-                    <div class="row"><button id="limit10" type="submit" class="btn btn-light">Show me 10 GIFs!</button>
+                <!--Search bar-->
+                <div id="form-display" class="col-md-3">
+                    <form>
+                        <div class="form-group">
+                            <label for="userSearch">
+                                <h2>Enter a superhero name!</h2>
+                            </label>
+                            <input type="text" class="form-control" id="userEntry">
+                        </div>
+                        <button id="submitButton" type="submit" class="btn btn-danger">
+                            <i class="fas fa-external-link-alt"></i> Submit</button>
+                    </form>
+                    <div class="container" id="limit-buttons">
+                        <!--Limit Changer-->
+                        <h2>SWITCH IT UP!</h2>
+                        <div class="row">
+                            <button id="limit10" type="submit" class="btn btn-light">Show me 10 GIFs!</button>
+                        </div>
+                        <div class="row">
+                            <button id="limit15" type="submit" class="btn btn-light">Show me 15 GIFs!</button>
+                        </div>
+                        <div class="row">
+                            <button id="limit20" type="submit" class="btn btn-light">Show me 20 GIFs!</button>
+                        </div>
                     </div>
-                    <div class="row"><button id="limit15" type="submit" class="btn btn-light">Show me 15 GIFs!</button>
-                    </div>
-                    <div class="row"><button id="limit20" type="submit" class="btn btn-light">Show me 20 GIFs!</button>
+                    <div class="container" id="forMovieButton">
+                        <h2>Want related movies? Select a topic then click below!</h2>
+                        <div class="row">
+                            <button id="movieButton" type="submit" class="btn btn-light">MOVIES</button>
+                        </div>
                     </div>
                 </div>
             </div>

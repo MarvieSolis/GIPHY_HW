@@ -26,6 +26,16 @@ h2 {
     padding: 15px;
 }
 
+#movies {
+    background: url("../images/movieback.jpg");
+    border: 10px;
+    border-top: 5px;
+    border-bottom: 5px;
+    border-color: black;
+    border-style: solid;
+    padding: 15px;
+}
+
 #gifDisplay {
     background: url("../images/gifback.jpg");
     border: 10px;
@@ -46,6 +56,11 @@ h2 {
     padding: 15px;
 }
 
+#forMovieButton {
+    padding: 15px;
+    margin-top: 20px;
+}
+
 p {
     font-family: 'Arvo', serif;
     text-align: center;
@@ -59,12 +74,17 @@ p {
     margin: 10px;
 }
 
+.selectionMovie {
+    margin: 20px;
+    margin-right: 40px;
+}
+
 
 
 #limit-buttons {
-    margin-top: 70px;
+    margin-top: 40px;
 }
 
 #limit10, #limit15, #limit20 {
-    margin: 20px;
+    margin: 10px;
 }
